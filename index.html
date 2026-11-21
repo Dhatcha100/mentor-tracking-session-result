@@ -1,0 +1,82 @@
+<html>
+<head>
+    
+    <style>
+        #result
+        {
+            width:fit-content;
+            height:fit-content;
+            border: 2px gray solid;
+            color:lime;
+        }
+
+        </style>
+</head>
+<body>
+<div id="search_box">
+<input type="text" id="regno"><br>
+<button onclick="find_regno()">Result</button>
+</div>
+
+<div id="result">
+<h3>Enter the Register Number then Hit Result Button</h3>
+</div>
+
+<script>
+
+let data={
+
+"MCA1001":
+{
+Communication:98,
+Python:90,
+Java:87
+},
+
+"MCA1002":
+{
+Communication:78,
+Python:75,
+Java:80
+},
+
+"MCA1003":
+{
+Communication:75,
+Python:67,
+Java:90
+},
+
+"MCA1004":
+{
+Communication:70,
+Python:76,
+Java:56
+}
+}
+
+
+function find_regno()
+{
+
+let regno=document.getElementById("regno").value;
+
+if(data[regno])
+{
+    let found=data[regno];
+
+    document.getElementById("result").innerHTML=`<h1>Register No : ${regno}</h1><br><h3>Communication : ${found.Communication}<br>Python : ${found.Python}<br>Java : ${found.Java}<br></h3>`;
+}
+else
+{
+console.log("not found");
+document.getElementById("result").innerHTML=`<h1 style="color:red" >Invaild Register Number</h1>`;
+}
+
+
+
+}
+
+</script>
+</body>
+</html>
